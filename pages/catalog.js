@@ -5,8 +5,10 @@ import { fetchDataFromApi } from "@/utils/api";
 import useSWR from 'swr';
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
+import Filter from '@/components/Filter';
 
-const maxResult = 9;
+
+const maxResult = 6;
 
 const Catalog = ({products}) => {
 
@@ -26,7 +28,7 @@ const Catalog = ({products}) => {
     <div className='w-full md:pt-16 bg-milk md:pb-9 relative'>
         <Wrapper>
             
-        <div className='max-w-full mx-auto mt-8 md:mt-0'>
+        <div className='max-w-full mx-auto pt-8 md:pt-0'>
             <div className='text-black text-2xl md:text-4xl mb-9 font-medium leading-tight'>
                     Каталог
             </div>
@@ -34,11 +36,11 @@ const Catalog = ({products}) => {
 
         <div className='flex flex-col md:flex-row gap-6 bg-milk'>
 
-            <div className='basis-1/4 bg-red'>
+            <div className='basis-1/4'>
                 <div className='text-black text-base md:text-2xl mb-6 font-medium leading-tight'>
                     Фильтры
                 </div>
-                Фильтр 
+                {/*<Filter/>*/}
             </div>
 
             <div className='basis-3/4'> 

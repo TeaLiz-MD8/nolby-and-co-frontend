@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Failed = () => {
     return (
-        <div className="min-h-[650px] flex items-center">
+        <div className="min-h-[650px] flex items-center bg-milk h-screen">
             <Wrapper>
                 <div className="max-w-[700px] p-6 mx-auto flex flex-col items-center">
                     <div className="text-4xl font-medium">Проблемы!</div>

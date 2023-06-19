@@ -11,35 +11,48 @@ const Footer = () => {
 
                       {/* MENU START */}
                       <div className="flex flex-col gap-4 shrink-0">
-                          <div className="font-roboto font-medium text-2xl">
-                              Интернет-магазин
-                          </div>
-                          <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
-                              Каталог
-                          </div>
-                          <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
-                              Условия доставки и оплаты
-                          </div>
-                          <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
-                              Личный кабинет
-                          </div>
-                          <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
-                              Избранное
-                          </div>
+                        <div className="font-roboto font-medium text-2xl">
+                            Интернет-магазин
+                        </div>
+
+                        <Link href="/catalog">
+                            <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
+                                Каталог
+                            </div>
+                        </Link>
+
+                        <Link href="/delivery">
+                            <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
+                                Условия доставки и оплаты
+                            </div>
+                        </Link>
+
+                        <Link href="/favorite">
+                            <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
+                                Избранное
+                            </div>
+                        </Link>
                       </div>
                       {/* MENU END */}
 
                         {/* MENU START */}
                         <div className="flex flex-col gap-4">
+                            
                           <div className="font-roboto font-medium text-2xl">
                                 Пользователям
                             </div>
-                            <div className="font-roboto text-base hover:text-black/[0.75]k cursor-pointer">
-                                Политика конфиденциальности
-                            </div>
-                            <div className="font-roboto text-base hover:text-black/[0.75]cursor-pointer">
-                                Условия использования
-                            </div>
+
+                            <Link href="/confidential_politic">
+                                <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
+                                    Политика конфиденциальности
+                                </div>
+                            </Link>
+
+                            <Link href="/use_rule">
+                                <div className="font-roboto text-base hover:text-black/[0.75] cursor-pointer">
+                                    Условия использования
+                                </div>
+                            </Link>
                         </div>
                         {/* MENU END */}
 

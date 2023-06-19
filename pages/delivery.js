@@ -31,10 +31,9 @@ const Delivery = () => {
 
 
             </div>
-            <div className='bais-5/12'> 
+            <div className='bais-5/12 flex justify-center'> 
             <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d64022.1124124821!2d30.296322259801375!3d59.90427535711716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sboxberry!5e0!3m2!1sru!2sru!4v1686839568511!5m2!1sru!2sru" 
-                width={416}
-                height={300} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                class="w-[280px] md:w-[416px] h-[200px] md:h-[300px]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 

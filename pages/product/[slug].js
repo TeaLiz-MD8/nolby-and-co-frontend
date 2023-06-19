@@ -1,19 +1,55 @@
 import React from 'react';
 import {AiOutlineHeart} from "react-icons/ai";
+import { AiOutlineRight } from 'react-icons/ai';
 import Wrapper from '@/components/Wrapper';
 import ProductDetailCarousel from '@/components/ProductDetailCarousel';
 import RelatedProducts from '@/components/RelatedProducts';
 import { fetchDataFromApi } from '@/utils/api';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart} from "@/store/cartSlice";
+import { addToCart, addToFavoriteCart} from "@/store/cartSlice";
+import Link from 'next/link';
+import {AiFillHeart} from "react-icons/ai";
+
 
 const ProductDetails = ({product, products}) => {
    
   const dispatch = useDispatch ();   
   const p = product?.data?.[0]?.attributes;
   return (
-    <div className='w-full py-6 md:py-16 bg-milk'>
+    <div className='w-full pt-3 md:pt-6 pb-3 md:pb-16 bg-milk'>
         <Wrapper>
+
+            {/* Breadcrumbs*/}
+            <div className='pb-3 md:pb-6 flex justify-center md:justify-start'>
+                <div className='flex flex-row items-center gap-1'>
+
+                <Link href="/" className='text-[10px] text-black/[0.75] hover:text-black/[0.5] cursor-pointer'>
+                    Главная
+                </Link>
+
+                <div> <AiOutlineRight className="text-[12px]"/> </div>
+
+                <Link href="/catalog" className='text-[10px] text-black/[0.75] hover:text-black/[0.5] cursor-pointer'>
+                    Каталог
+                </Link>
+
+                <div> <AiOutlineRight className="text-[12px]"/> </div>
+
+                <div className='text-[10px] text-black/[0.75]'>
+                    {p.categorylist}
+                </div>
+
+                <div> <AiOutlineRight className="text-[12px]"/> </div>
+
+                <div className='text-[10px] text-black/[0.75]'>
+                    {p.name}
+                </div>
+
+
+                </div>
+            </div>
+             {/* Breadcrumbs*/}
+
             <div className='flex flex-col md:flex-row gap-[56px] lg:gap-[112px]'>
 
                 {/* Left side */}
@@ -25,7 +61,7 @@ const ProductDetails = ({product, products}) => {
                 {/* Right side */}
                 <div className='flex-[1]'> 
 
-                    <div className='flex flex-row justify-between items-center'>
+                    <div className='flex flex-row justify-between items-center gap-6'>
 
                         
                         <div className='text-4xl font-semibold'>
@@ -33,7 +69,11 @@ const ProductDetails = ({product, products}) => {
                         </div>
 
                         <button className="text-red hover:text-red/[0.75] cursor-pointer relative"> 
-                            <AiOutlineHeart className="text-[24px] md:text-[36px]" />
+                            <AiOutlineHeart className="text-[30px] md:text-[36px]"
+                            onClick={ () => {
+                                dispatch ( addToFavoriteCart ({
+                                  ...product?.data?.[0]})); 
+                            }}/>
                         </button>
                     </div>
 
@@ -105,7 +145,7 @@ const ProductDetails = ({product, products}) => {
 
             </div>
 
-            <RelatedProducts products={ product }/>
+            <RelatedProducts products={ products }/>
 
         </Wrapper>
     </div>
