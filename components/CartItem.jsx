@@ -12,21 +12,6 @@ const CartItem = ({ data}) => {
 
     const p = data.attributes;
 
-    {/* Count tovars*/}
-    const [count, setQuantity] = useState(1);
-
-    const decrement = () => {
-        setQuantity (prevState => {
-            if(prevState === 1) return 1
-            return prevState - 1
-        });
-    }
-
-    const increment = () => {
-        setQuantity (prevState => prevState + 1);
-    }
-    {/* Count tovars*/}
-
     const dispatch = useDispatch();
 
     const updateCartItem = (e, key) => {
@@ -59,20 +44,6 @@ const CartItem = ({ data}) => {
                     <div>
                         <AiOutlineHeart className="text-[20px] md:text-[24px] cursor-pointer hover:text-red/[0.75]"/>
                     </div>
-
-                    {/*
-                    <div className='flex flex-row border border-black rounded-md items-center'>
-                        <AiOutlineMinus 
-                            className="w-[40px] text-[20px] md:text-[24px] cursor-pointer hover:text-black/[0.75]"
-                            onClick={decrement}
-                        /> 
-                        <div className='w-[40px] flex justify-center border-x border-black'> {count} </div>
-                        <AiOutlinePlus
-                            className="w-[40px] text-[20px] md:text-[24px] cursor-pointer hover:text-black/[0.75]"
-                            onClick={increment}
-                        /> 
-                    </div> 
-                    */}
 
                     <select
                         className="hover:text-black bg-milk"
