@@ -25,12 +25,13 @@ const CartItem = ({ data}) => {
 
     
   return ( <div className='flex py-6 gap-6'>
-        <div className='shrink-0 aspect-square w-[50px] md:w-[152px] border border-green'>
+        <div className='shrink-0 aspect-square w-[50px] w-max-[152px]'>
             <Image
                 src={p.thumbnail.data.attributes.url}
                 alt={p.name}
                 width={152}
                 height={214}
+                className='border border-green'
             />
         </div>
         <div className='w-full flex flex-col md:flex-row justify-between gap-3'>

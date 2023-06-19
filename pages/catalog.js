@@ -59,7 +59,7 @@ const Catalog = ({products}) => {
 
         {/* Pagination buttons */}
         {data?.meta?.pagination?.total > maxResult && (
-            <div className="flex gap-3 items-center justify-center my-16 md:my-0">
+            <div className="flex gap-3 items-center justify-center py-16 md:py-0">
                 <button
                     className={`py-2 px-4 text-black hover:text-black/[0.75] cursor-pointer`}
                     disabled={pageIndex === 1}

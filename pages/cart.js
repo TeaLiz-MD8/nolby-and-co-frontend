@@ -41,7 +41,7 @@ const Cart = () => {
     }
 
   return (
-    <div className='w-full md:pt-16 bg-milk'>
+    <div className='w-full h-screen md:pt-16 bg-milk'>
         <Wrapper>
 
             {cartItems.length > 0 && (
