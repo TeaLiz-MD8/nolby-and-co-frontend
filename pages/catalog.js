@@ -5,7 +5,6 @@ import { fetchDataFromApi } from "@/utils/api";
 import useSWR from 'swr';
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
-import Filter from '@/components/Filter';
 
 
 const maxResult = 6;
